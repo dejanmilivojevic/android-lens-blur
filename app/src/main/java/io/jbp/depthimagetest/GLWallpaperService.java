@@ -149,6 +149,8 @@ public abstract class GLWallpaperService extends WallpaperService {
 			rendererHasBeenSet = true;
 
             this.renderer = (DepthRenderer) renderer;
+
+			this.renderer.toggleBlur();
 		}
 
 		protected void setEGLContextClientVersion(int version) {
