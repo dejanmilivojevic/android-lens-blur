@@ -15,7 +15,8 @@
           float depth = texture2D(uDepthTexture, vTexCoordinate).r * -1.0 + 0.5;
           vec2 coordAdjust = uSkew * vec2(1.0, -1.0) * depth * scale;
           gl_FragColor = texture2D(uColourTexture, vTexCoordinate + coordAdjust);
-        }</string>
+        }
+</string>
     <string name="fragment_shader_blur">
         
         precision highp float; 
@@ -67,6 +68,7 @@
         void main() {
             vTexCoordinate = aTexCoordinate;
             gl_Position = uMVPMatrix * vec4(aVertexPosition, 1.0);
-        }</string>
+        }
+</string>
 
 </resources>

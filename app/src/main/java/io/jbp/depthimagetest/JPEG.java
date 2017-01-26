@@ -50,6 +50,7 @@ public class JPEG extends Const {
     public JPEG(byte[] rawData, Base64Wrapper wrapper) {
         this.base64 = wrapper;
         this.init(rawData, null);
+        m_RawData = rawData;
     }
 
     /**

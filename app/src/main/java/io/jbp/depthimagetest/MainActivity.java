@@ -1,6 +1,8 @@
 package io.jbp.depthimagetest;
 
 import java.io.FileNotFoundException;
+
+import android.content.SharedPreferences;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.app.Activity;
@@ -134,7 +136,14 @@ public class MainActivity extends Activity implements SensorEventListener
       try
       {
         //String imageData = Util.readInputStream(getContentResolver().openInputStream(data.getData()));
+
         JPEG image = new JPEG(getContentResolver().openInputStream(data.getData()), wrapper);
+
+        SharedPreferences settings = getSharedPreferences("DisplayImage", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("myByteArray", Base64.encodeToString(image.getRawData(), Base64.DEFAULT));
+        editor.commit();
+
         showImage(DepthImage.loadImage(image));
 
 
