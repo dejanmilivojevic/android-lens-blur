@@ -244,12 +244,12 @@ public class MainActivity extends Activity implements SensorEventListener
 
   private void processRot(SensorEvent ev)
   {
-    float x = ev.values[0];
-    float y = ev.values[1];
+    float y = ev.values[0];
+    float x = ev.values[1];
     float z = ev.values[2];
     Log.d(TAG, String.format("rot sensor %.2f,%.2f,%.2f", x, y, z));
 
     if (renderer != null)
-      renderer.setSkew(y * 4f, x * -4f);
+      renderer.setSkew(y * -4f, x * 4f);
   }
 }

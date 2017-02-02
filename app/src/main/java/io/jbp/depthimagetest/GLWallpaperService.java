@@ -90,12 +90,12 @@ public abstract class GLWallpaperService extends WallpaperService {
 
         private void processRot(SensorEvent ev)
         {
-            float x = ev.values[0];
-            float y = ev.values[1];
+            float y = ev.values[0];
+            float x = ev.values[1];
             float z = ev.values[2];
 
             if (renderer != null)
-                renderer.setSkew(y * 4f, x * -4f);
+                renderer.setSkew(y * -4f, x * 4f);
         }
 
 		@Override
